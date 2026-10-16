@@ -1,4 +1,4 @@
-from . import model
+import model
 
 
 def run(value: model.Item | None = None):

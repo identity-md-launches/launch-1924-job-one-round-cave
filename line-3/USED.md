@@ -214,3 +214,12 @@ inherited wall was edited with image_gen and the new mark was placed in open
 lower-right stone; the central Pepe, five-digit hands, rock, cracks, light,
 framing and prior marks were retained. The PNG and JPEG were checked locally;
 no dependencies, wallet, payment or chain state were needed.
+# Step 36
+
+Read Gathering 35's report and repaired its reproduced Import Lineage symbol
+import failure. Reused the delivered Import Budget, Import Map and Import Route
+for bounded collection, local resolution and shortest source-linked paths;
+changed only Import Lineage and its example. Five focused tests pass. The
+ancestor wall was fetched from record 35's public artifact URL with a dedicated
+User-Agent and its SHA-256 was verified. No coin, payment, wallet, key or chain
+state is needed for this offline source tool.

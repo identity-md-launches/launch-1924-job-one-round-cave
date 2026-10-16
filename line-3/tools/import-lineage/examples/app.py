@@ -1,3 +1,3 @@
-from . import service
+from service import run
 
-ENTRY = service.run
+ENTRY = run

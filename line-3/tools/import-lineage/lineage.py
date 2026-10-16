@@ -1,65 +1,72 @@
 #!/usr/bin/env python3
-"""Print a shortest, source-only import lineage between two local modules."""
-from __future__ import annotations
+"""Trace a local Python import lineage from bounded, unexecuted source."""
 
-import ast
+import argparse
+import importlib.util
 import json
-import pathlib
+from pathlib import Path
 import sys
-from collections import deque
 
 
-def modules(root: pathlib.Path) -> dict[str, pathlib.Path]:
-    result = {}
-    for path in root.rglob("*.py"):
-        rel = path.relative_to(root).with_suffix("")
-        parts = list(rel.parts)
-        if parts[-1] == "__init__":
-            parts.pop()
-        result[".".join(parts)] = path
-    return result
+def load_route():
+    """Load this line's delivered route tool, never the inspected project."""
+    path = Path(__file__).resolve().parents[1] / 'import-route' / 'route.py'
+    spec = importlib.util.spec_from_file_location('line3_lineage_route', path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
-def imports(path: pathlib.Path, name: str, known: set[str]) -> set[str]:
+def trace(root, start, target, limits=None):
+    """Return complete source evidence for a shortest local-import lineage.
+
+    An unknown endpoint raises ValueError. An absent path is reported only after
+    a completed collection; parse issues and dynamic calls remain in the result.
+    """
+    route = load_route()
+    budget = route.load_budget()
+    scan = budget.scan(Path(root), limits)
+    answer = route.explain(scan['map'], start, target)
+    return dict(answer, status='complete', found=answer['reachable'],
+                path=answer['import_path'] if answer['reachable'] else None,
+                inventory=scan['inventory'], limits=scan['limits'],
+                collection_scope=scan['scope'])
+
+
+def lineage(root, start, target):
+    """Keep the original path-only API for existing callers."""
     try:
-        tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
-    except (OSError, SyntaxError, UnicodeError):
-        return set()
-    package = name.split(".")[:-1]
-    found = set()
-    for node in ast.walk(tree):
-        if isinstance(node, ast.Import):
-            found.update(alias.name for alias in node.names)
-        elif isinstance(node, ast.ImportFrom):
-            base = package[: max(0, len(package) - node.level + 1)]
-            if node.level == 0:
-                base = []
-            prefix = ".".join(base + ([node.module] if node.module else []))
-            for alias in node.names:
-                candidate = prefix if alias.name == "*" else ".".join(x for x in (prefix, alias.name) if x)
-                found.add(candidate)
-    return {candidate for candidate in known if candidate == name or candidate.startswith(candidate + ".") or candidate in found}
+        return trace(root, start, target)['path']
+    except ValueError as exc:
+        if str(exc).startswith('unknown local module:'):
+            return None
+        raise
 
 
-def lineage(root: pathlib.Path, start: str, target: str) -> list[str] | None:
-    known = modules(root)
-    if start not in known or target not in known:
-        return None
-    queue = deque([(start, [start])])
-    seen = {start}
-    while queue:
-        current, path = queue.popleft()
-        if current == target:
-            return path
-        for nxt in sorted(imports(known[current], current, set(known))):
-            if nxt not in seen:
-                seen.add(nxt)
-                queue.append((nxt, path + [nxt]))
-    return None
+def main(argv=None):
+    route = load_route()
+    budget = route.load_budget()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('root', type=Path, help='explicit import root inside the current workspace')
+    parser.add_argument('start', help='exact dotted starting module')
+    parser.add_argument('target', help='exact dotted destination module')
+    parser.add_argument('--strict', action='store_true', help='fail if issues, cycles or dynamic calls remain')
+    for name, value in budget.DEFAULTS.items():
+        parser.add_argument('--max-' + name.replace('_', '-'), type=int,
+                            default=value, dest=name)
+    args = parser.parse_args(argv)
+    try:
+        result = trace(args.root, args.start, args.target,
+                       {name: getattr(args, name) for name in budget.DEFAULTS})
+    except (OSError, ValueError, RuntimeError, RecursionError) as exc:
+        error = (exc.evidence if isinstance(getattr(exc, 'evidence', None), dict) else
+                 {'type': 'scan_error', 'detail': str(exc)})
+        print(json.dumps({'status': 'refused', 'error': error}, indent=2))
+        return 2
+    print(json.dumps(result, indent=2, ensure_ascii=False))
+    warnings = result['issues'] or result['cycles'] or result['dynamic_imports']
+    return int(not result['found'] or bool(args.strict and warnings))
 
 
-if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        raise SystemExit("usage: lineage.py ROOT START_MODULE TARGET_MODULE")
-    answer = lineage(pathlib.Path(sys.argv[1]), sys.argv[2], sys.argv[3])
-    print(json.dumps({"found": answer is not None, "path": answer}, indent=2))
+if __name__ == '__main__':
+    sys.exit(main())

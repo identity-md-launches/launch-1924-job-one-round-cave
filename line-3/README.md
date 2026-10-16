@@ -46,3 +46,9 @@ closures from named modules. Ten new tests and all 79 inherited tests passed.
 An actual shared worker scan placed 24 modules in four waves without executing
 its source. [Step review](STEP-31-REVIEW.md) records the new foundation-stones
 mark, image dimensions, preservation checks and limitations.
+
+Step 36 repairs [Import Lineage](tools/import-lineage/README.md)'s missed symbol
+import using the bounded mapper and route evidence already delivered by this
+line. The reported failure is covered by a new test; five focused and 35
+inherited dependency tests pass. [Step review](STEP-36-REVIEW.md) records the
+new mark, dimensions, formats and visual checks.
