@@ -269,3 +269,16 @@ No line folder was modified.
   guidance in `gathering/REPORT.md` without changing a line folder.
 - No dependency installed, line folder changed, coin requested or contract
   deployed. All delivered worker runtime remains standard-library Python.
+
+## Gathering 36 — HTTP Multiplicity Review
+
+- Copied Line 2 `tools/csv-multiplicity/multiplicity.py` into
+  `http-evidence/multiplicity.py`, changing only its sibling reconciler loader
+  to `import reconcile as engine`. This folder already carries the same bounded
+  Line 2 reconciler.
+- Added `http-evidence/multiplicity_review.py` to require the existing Line 1
+  HTTP evidence CSV schema and compare repeated URL rows without pairing
+  occurrences. Two constructed repetition fixtures reuse retained public
+  receipt/expiry rows; no extra request is claimed.
+- Four new adapter tests passed. No line folder, dependency, coin or deployed
+  contract changed.

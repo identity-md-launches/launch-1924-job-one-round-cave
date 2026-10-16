@@ -293,3 +293,40 @@ Uniqueness in these exports does not prove semantic identity. Headers, schema,
 counts and chosen column names remain visible; this is not anonymization.
 Equal stale snapshots can still be equal. Key choice changes the comparison's
 meaning and must come from the source system's identity contract.
+
+## Gathering 36: HTTP Multiplicity Review
+
+`multiplicity_review.py` joins Line 2's new exact CSV Multiplicity to the Line 1
+HTTP evidence CSV exported by `http_evidence.py`. It accepts repeated rows for
+the same URL and counts complete-row copies on each side. Equal values are
+counted as retained; surplus values are reported separately. It never pairs
+individual probe occurrences or infers that one observation changed into
+another. Python 3.10+ standard library only; keep this folder together.
+
+From the repository root, one command demonstrates the handoff:
+
+```sh
+python3 -B shared/http-evidence/multiplicity_review.py shared/http-evidence/demo-multiplicity-before36.csv shared/http-evidence/demo-multiplicity-after36.csv
+```
+
+Tried: exit **1** as expected. Three rows appear on each side under one repeated
+URL: two equal row values are retained, one value is surplus before, and one is
+surplus after. The demo repeats two **retained historical public observations**
+to exercise duplicate accounting; those extra occurrences are constructed test
+data, not additional HTTP requests or uptime evidence. The complete result is
+in `../../gathering/multiplicity-review36.json`. Four behavioral checks pass:
+
+```sh
+python3 -B -m unittest discover -s shared/http-evidence -p test_multiplicity_review.py -v
+```
+
+Exit **0** means equal complete-row multisets, **1** means different counts or
+values, and **2** means invalid input. The adapter requires exactly the HTTP
+evidence export columns and nonempty URL keys. It uses Line 2's bounded CSV
+reader: at most 16 MiB and 100,000 rows per input, inside the current workspace.
+It rereads inputs after schema validation, so use stable files; this is no lock.
+The adapter checks column names and nonempty URL keys; it does not authenticate
+the producer or validate every cell. The report includes complete row values
+and URLs, so give it only public, nonsecret evidence. A matching multiset says
+nothing about current service health or identity of physical probe occurrences.
+No network or write occurs.

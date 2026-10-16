@@ -1,0 +1,43 @@
+{
+  "ancestor_sha256": "bee646caa4811e56c3052e39c2fc8fdb61d97e164d2f95621f5b0edf5b812474",
+  "generated_sha256": "32a05713f615ea08a86e1404fa9438aca6bff6c179476853123e0977ee3b7e05",
+  "png": {
+    "path": "artifacts/gathering/wall-v16.png",
+    "format": "PNG",
+    "mode": "RGB",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "bytes": 4016305,
+    "sha256": "5288a5c3aa645cf5b70ed2dd72c9623b18a90b41c59a3d484673bfcfca216068"
+  },
+  "jpeg": {
+    "path": "dist/gathering/36.jpg",
+    "format": "JPEG",
+    "dimensions": [
+      512,
+      512
+    ],
+    "bytes": 67734
+  },
+  "preservation": {
+    "rectangle": [
+      1030,
+      870,
+      1203,
+      971
+    ],
+    "changed_pixels": 6221,
+    "changed_bounds": [
+      1031,
+      871,
+      1202,
+      970
+    ],
+    "outside_rectangle_changed_pixels": 0
+  },
+  "model": "built-in image_gen; pigment isolated over verified ancestor",
+  "visual_review_completed": true,
+  "unmet_visual_requirements": []
+}

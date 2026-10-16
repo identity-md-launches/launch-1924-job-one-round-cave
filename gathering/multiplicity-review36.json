@@ -1,0 +1,112 @@
+{
+  "caution": "Retained copies count equal row values. They do not identify physical probe occurrences, establish uptime, or pair changes.",
+  "comparison": {
+    "columns": [
+      "body_sha256",
+      "cache_type",
+      "current_age_seconds",
+      "evaluated_at",
+      "final_url",
+      "freshness_lifetime_seconds",
+      "probe_ok",
+      "remaining_seconds",
+      "source_sha256",
+      "status",
+      "url",
+      "verdict",
+      "warnings"
+    ],
+    "format": "csv-multiplicity/v1",
+    "groups": [
+      {
+        "after_count": 3,
+        "after_surplus_copies": 1,
+        "before_count": 3,
+        "before_surplus_copies": 1,
+        "duplicate_key": true,
+        "empty_key_columns": [],
+        "key": {
+          "url": "https://api.imd.fun/launches"
+        },
+        "retained_copies": 2,
+        "variants": [
+          {
+            "after_count": 1,
+            "after_records": [
+              2
+            ],
+            "after_surplus_copies": 0,
+            "before_count": 2,
+            "before_records": [
+              2,
+              3
+            ],
+            "before_surplus_copies": 1,
+            "retained_copies": 1,
+            "values": {
+              "body_sha256": "5ec0acb0fd0b0f0dceb68f8cf55b3ec6e399dcaf3fa928e3b1d35479724f85c4",
+              "cache_type": "shared",
+              "current_age_seconds": "1.002042",
+              "evaluated_at": "2026-10-15T19:03:35.002042+00:00",
+              "final_url": "https://api.imd.fun/launches",
+              "freshness_lifetime_seconds": "10",
+              "probe_ok": "true",
+              "remaining_seconds": "8.997958",
+              "source_sha256": "b272199daa64e8d6d15efb3a198c456527e2445c18a806fee9636cfd9494cff5",
+              "status": "200",
+              "url": "https://api.imd.fun/launches",
+              "verdict": "within_freshness_lifetime",
+              "warnings": "[]"
+            }
+          },
+          {
+            "after_count": 2,
+            "after_records": [
+              3,
+              4
+            ],
+            "after_surplus_copies": 1,
+            "before_count": 1,
+            "before_records": [
+              4
+            ],
+            "before_surplus_copies": 0,
+            "retained_copies": 1,
+            "values": {
+              "body_sha256": "5ec0acb0fd0b0f0dceb68f8cf55b3ec6e399dcaf3fa928e3b1d35479724f85c4",
+              "cache_type": "shared",
+              "current_age_seconds": "11.0",
+              "evaluated_at": "2026-10-15T19:03:45+00:00",
+              "final_url": "https://api.imd.fun/launches",
+              "freshness_lifetime_seconds": "10",
+              "probe_ok": "true",
+              "remaining_seconds": "0",
+              "source_sha256": "b272199daa64e8d6d15efb3a198c456527e2445c18a806fee9636cfd9494cff5",
+              "status": "200",
+              "url": "https://api.imd.fun/launches",
+              "verdict": "stale",
+              "warnings": "[]"
+            }
+          }
+        ]
+      }
+    ],
+    "identity_matching": false,
+    "keys": [
+      "url"
+    ],
+    "multiset_equal": false,
+    "summary": {
+      "after_records": 3,
+      "after_surplus_copies": 1,
+      "before_records": 3,
+      "before_surplus_copies": 1,
+      "duplicate_key_groups": 1,
+      "empty_key_groups": 0,
+      "key_groups": 1,
+      "retained_copies": 2
+    }
+  },
+  "schema": "http-evidence-multiplicity/v1",
+  "source_schema": "http-evidence CSV"
+}
