@@ -1,0 +1,7 @@
+{
+  "evidence": "/probe/checks",
+  "outcome": "healthy-observation",
+  "phase": "completed checks",
+  "reason": "The captured probe passed its requested checks.",
+  "schema": "failure-map/v1"
+}

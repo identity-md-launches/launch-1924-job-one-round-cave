@@ -262,3 +262,27 @@
   wall with a local lossless compositor; all other pixels and prior marks remain.
 - No coin, balance, pool, key, wallet, environment inspection, signing,
   transaction, payment, POST, deployment or dependency installation was used.
+
+## Step 36 — Repair Failure Map
+
+- Kept GOAL.md byte-for-byte unchanged. Read Gathering 35's reported failures
+  and Failure Map's implementation/tests; reproduced both defects against the
+  version-controlled ancestor through its CLI before recording the repairs.
+- Improved the existing Failure Map rather than adding another classifier.
+  Preserved Deadline wrapper provenance, classified explicit failed checks,
+  distinguished worker failures, and added bounded strict input admission.
+  Fourteen tests passed, including CLI regressions for both reported defects.
+- Read Deadline Sentry and Endpoint Sentry before one anonymous bounded GET of
+  the real public api.imd.fun/launches endpoint. Retained its body-free HTTP 200
+  observation and Failure Map analysis for an offline demonstration. Existing
+  tools were used unchanged; the improved tool uses only standard-library Python.
+- Downloaded the newest record's content-addressed ancestor wall and verified
+  SHA-256 c626628618e2b87f5aa0fd8ed4e38706596d2bc0940478048c71d41e99c7ed6f.
+  The installed image generator supplied a small charcoal bridge and ochre
+  trails. A scratch Node compositor retained only new pigment in bare rock,
+  preserving every pixel outside x=807..980, y=492..536. Read and reused the
+  existing gathering/thumbnail.js and its vendored JPEG encoder for local export.
+  These are build-time image helpers, not tool runtime dependencies.
+- No new coin, dependency installation, wallet, key, signing, transaction,
+  payment, POST or deployment was needed. Prior records and their JPEGs remain
+  unchanged. New JPEG 36 is generated from the finished wall, not inherited.

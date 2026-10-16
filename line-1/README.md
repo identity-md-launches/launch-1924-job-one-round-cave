@@ -47,3 +47,9 @@ uses a real swarm response; see [step 33](STEP-33-REVIEW.md).
 [Freshness Lens](tools/freshness-lens/README.md) distinguishes recent, stale,
 future-dated and undated saved observations at an explicit evaluation time.
 It keeps capture age separate from probe health. See [step 34](STEP-34-REVIEW.md).
+
+Step 36 repairs both [Failure Map](tools/failure-map/README.md) defects found by
+Gathering 35: lost watchdog classification and HTTP 200 masking a failed JSON
+expectation. Its offline demo uses a fresh retained real swarm observation;
+14 tests cover the repaired CLI paths and evidence admission. See
+[the step review](STEP-36-REVIEW.md).

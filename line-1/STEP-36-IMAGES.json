@@ -1,0 +1,47 @@
+{
+  "ancestor_sha256": "c626628618e2b87f5aa0fd8ed4e38706596d2bc0940478048c71d41e99c7ed6f",
+  "png": {
+    "paths": [
+      "artifacts/line-1/wall-v16.png",
+      "artifacts/line-1/wall.png"
+    ],
+    "format": "PNG",
+    "mode": "RGB",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "bytes": 4017728,
+    "sha256": "e50793553c8074898573a349bcf8f58c26a68673b7d750688a2480f7f9b7d64d"
+  },
+  "jpeg": {
+    "path": "dist/line-1/36.jpg",
+    "format": "JPEG",
+    "dimensions": [
+      512,
+      512
+    ],
+    "bytes": 63693
+  },
+  "preservation": {
+    "addition_rectangle": [
+      807,
+      492,
+      980,
+      536
+    ],
+    "changed_pixels": 1850,
+    "changed_bounds": [
+      808,
+      493,
+      979,
+      535
+    ],
+    "outside_rectangle_changed_pixels": 0
+  },
+  "image_method": "Built-in image generation followed by isolation of new earth pigment over exact inherited pixels.",
+  "visual_review": "Opened final PNG and fresh JPEG: ancestral Pepe figures, stone, cracks, light and framing preserved; small charcoal bridge and ochre trails visible. No writing, border, prohibited symbol or new hands observed. The motif is subtle at thumbnail size.",
+  "unmet_visual_requirements": [
+    "Inherited simplified hands do not resolve individual digits; five-digit anatomy cannot be independently counted. No hands or handprints were added or changed."
+  ]
+}

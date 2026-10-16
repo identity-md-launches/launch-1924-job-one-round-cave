@@ -1,0 +1,62 @@
+{
+  "regressions": [
+    {
+      "case": "watchdog",
+      "before": {
+        "exit": 1,
+        "result": {
+          "evidence": "/",
+          "outcome": "insufficient-evidence",
+          "phase": "unknown",
+          "reason": "The report has no usable phase evidence.",
+          "schema": "failure-map/v1"
+        }
+      },
+      "after": {
+        "exit": 1,
+        "result": {
+          "evidence": "/error/kind",
+          "outcome": "watchdog-failure",
+          "phase": "worker deadline",
+          "reason": "The wrapper recorded a worker failure; no completed probe is available.",
+          "schema": "failure-map/v1"
+        }
+      }
+    },
+    {
+      "case": "json_expectation",
+      "before": {
+        "exit": 1,
+        "result": {
+          "evidence": "/hops/0/status",
+          "outcome": "http-failure",
+          "phase": "HTTP status",
+          "reason": "The server returned a status that did not satisfy the request.",
+          "schema": "failure-map/v1",
+          "status": 200
+        }
+      },
+      "after": {
+        "exit": 1,
+        "result": {
+          "evidence": "/checks/1",
+          "outcome": "check-failure",
+          "phase": "JSON expectation",
+          "reason": "A requested check failed after a response was captured.",
+          "schema": "failure-map/v1"
+        }
+      }
+    }
+  ],
+  "tests": {
+    "command": "python3 -B -m unittest discover -s line-1/tools/failure-map -v",
+    "passed": 14
+  },
+  "goal_unchanged": true,
+  "older_records_and_jpegs_unchanged": true,
+  "new_record_number": 36,
+  "record_hash_matches": true,
+  "output_and_continuation_identical": true,
+  "modified_paths_in_scope": true,
+  "new_or_changed_nonartifact_files_below_100KB": true
+}
