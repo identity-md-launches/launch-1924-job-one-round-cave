@@ -1,0 +1,21 @@
+{
+  "goal_unchanged": true,
+  "older_records_and_previews_unchanged": true,
+  "scope_pass": true,
+  "new_record_number": 36,
+  "record_schema_pass": true,
+  "png_dimensions": [
+    1254,
+    1254
+  ],
+  "jpeg_dimensions": [
+    512,
+    512
+  ],
+  "continuation_identical": true,
+  "record_hash_matches": true,
+  "new_nonartifact_files_under_100000_bytes": true,
+  "test_count": 107,
+  "tests_passed": 107,
+  "unmet_visual_requirements": []
+}

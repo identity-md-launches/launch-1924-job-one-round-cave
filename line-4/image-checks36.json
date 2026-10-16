@@ -1,0 +1,51 @@
+{
+  "ancestor_sha256": "d043c6f6f2aa58fe6d46a53c0759203353a01cdf8970dad3feba14e16dbe5e69",
+  "generated_sha256": "8fedabe25eaeec26360e5c533c18a0f77dc957e2b96f5fc79dffc93e421238cb",
+  "png": {
+    "path": "artifacts/line-4/wall-v16.png",
+    "format": "PNG",
+    "mode": "RGB",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "bytes": 4067883,
+    "sha256": "135cad1805e7b55690b61ed57d01c05079452308879950c73fc231d1709e6c6d"
+  },
+  "jpeg": {
+    "path": "dist/line-4/36.jpg",
+    "format": "JPEG",
+    "dimensions": [
+      512,
+      512
+    ],
+    "bytes": 74336,
+    "sha256": "f79f47e643cd5e455027be9002f4bd7e86c237811a4adaa721bf58f44f1a89f5"
+  },
+  "preservation": {
+    "rectangle": [
+      840,
+      95,
+      970,
+      220
+    ],
+    "changed_pixels": 1900,
+    "changed_bounds": [
+      852,
+      101,
+      958,
+      216
+    ],
+    "outside_rectangle_changed_pixels": 0
+  },
+  "visual_review_required": true,
+  "visual_review_completed": true,
+  "unmet_visual_requirements": [],
+  "visual_review_notes": [
+    "Final PNG and JPEG opened for review.",
+    "Inherited rock, framing, light and paintings preserved outside the previously bare motif silhouette.",
+    "Four inherited visible hands each have four fingers and one thumb; no new hands.",
+    "No letters, numbers, captions, signatures, logos, borders or prohibited symbols observed.",
+    "New motif is small and less legible at preview size."
+  ]
+}

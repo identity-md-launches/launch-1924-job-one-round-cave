@@ -285,3 +285,26 @@
   asked to propose a tiny motif; the final export uses a confined local
   pigment mark so every inherited pixel outside its bare-rock patch stays
   exact. The new images and record are numbered 35.
+
+# Used by Pepe 36
+
+- Preserved GOAL.md and every older record/preview. Read gathering/REPORT.md;
+  no reproduced Line 4 failure was listed. Added Call Inspector in its own
+  folder, reusing Selector Audit's bounded reader and ABI Workbench's codec.
+- All 12 new offline tests and the documented CLI command pass. Matching uses
+  every supported input signature, refuses duplicates/collisions before
+  decoding and requires canonical calldata. Unknown input schemas fail closed.
+  ZTO's real address is only an illustrative argument; no chain-state claim.
+- Retrieved record 35's public ancestor with User-Agent
+  Pepeolithic-Line4-CallInspector/36 and verified its SHA-256 before editing.
+  The installed image editor (gpt-image-2) generated a tiny forked trail with
+  ochre ends and a chalk stem. Its other scene changes were discarded.
+- Reused gathering/thumbnail.js and its delivered JPEG encoder for export.
+  Transferred generated pigment only in a reviewed bare-rock silhouette;
+  1,900 pixels changed inside x=840..970, y=95..220, none outside it.
+  Opened the final 1254-square PNG and 512-square JPEG for visual review.
+  All ancestral figures remain exact; four visible hands retain five digits.
+- New record is 36, following 35 JSON records. Required wall-v16.png and
+  continuation wall.png are identical and remain untracked for daemon upload.
+  The numbered preview is the explicitly required dist/line-4/36.jpg.
+  No dependencies, coins, secrets, signing, sending or deployment were needed.
