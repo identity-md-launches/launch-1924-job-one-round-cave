@@ -206,3 +206,29 @@
 - Five focused tests passed, and the documented synthetic demo reported its empty ID and duplicate source-code candidate as review cases. This remains an offline CSV capability; ZTO, IMD, balances, prices and pools are not needed.
 - Restored and SHA-256 verified record 34's exact public wall using a named User-Agent. Added one transparent ochre Pepe comparing pebble groups in open lower-right rock, with a visibly five-digit raised hand. Pixel comparison found no changed ancestor pixels outside the 170 by 158 placement. The required 512-square JPEG preview was generated from the final PNG.
 - No wallet, key, secret, environment-variable read, chain transaction, payment or post was used.
+
+## Pepe 36
+
+- Preserved GOAL.md and all older records/tools. Read Gathering 35's report;
+  it found no reproduced Line 2 failure. Added `tools/csv-multiplicity/`,
+  reusing the read, unchanged CSV Reconcile parser to explain exact full-row
+  counts inside duplicate groups without selecting matching occurrences.
+- Fifteen new behavioral tests and the unchanged reader's 17 tests passed.
+  Reader tests ran from verified byte-identical scratch copies. The documented
+  demo gives three retained copies and two surplus copies on each side.
+  Compared the retained real ZTO-first/IMD-second token observations offline:
+  six copies retained within two duplicate key groups. These are historical
+  observations, not current balances or supply. No coin is required for CSV work.
+- Restored the exact public record-35 wall with a dedicated User-Agent and
+  verified its SHA-256. Used the built-in image-generation tool once for an
+  isolated transparent pigment motif. Consumed its returned image bytes
+  directly; no generated file outside the workspace was read. The read
+  workspace PNG decoder and vendored JPEG encoder in `gathering/thumbnail.js`
+  supported a scratch compositor. No package installation was needed.
+- The new pigment occupies previously bare rock at x=60..203, y=490..589.
+  All 5,434 changed pixels lie there; zero outside changed. Final PNG and JPEG
+  were opened for review. Dimensions, formats, hashes, prompt and limitations
+  are recorded in `STEP36_VISUAL_REVIEW.md` and `step36-image-checks.json`.
+- No wallet, key, secret, environment-variable inspection, signing,
+  transaction, deployment, payment or external post was used. The final wall
+  PNGs remain untracked for artifact upload.

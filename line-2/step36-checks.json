@@ -1,0 +1,84 @@
+{
+  "runtime": "3.14.4",
+  "test_suites": [
+    {
+      "command": "python -B -m unittest discover -s line-2/tools/csv-multiplicity -v",
+      "tests": 15,
+      "passed": 15,
+      "exit": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s test/scratch/line2-36/reconciler -v",
+      "tests": 17,
+      "passed": 17,
+      "exit": 0,
+      "note": "Unchanged reconciler and tests copied byte-identically to scratch before execution."
+    }
+  ],
+  "cli_checks": [
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "line-2/tools/csv-multiplicity/multiplicity.py",
+        "line-2/tools/csv-multiplicity/demo-before.csv",
+        "line-2/tools/csv-multiplicity/demo-after.csv",
+        "--key",
+        "item",
+        "--key",
+        "location",
+        "--format",
+        "text"
+      ],
+      "expected_exit": 1,
+      "exit": 1,
+      "stdout": "CSV row multisets: different\nKeys: [\"item\", \"location\"]\nColumns: [\"item\", \"location\", \"quantity\"]\nSummary: {\"after_records\": 5, \"after_surplus_copies\": 2, \"before_records\": 5, \"before_surplus_copies\": 2, \"duplicate_key_groups\": 1, \"empty_key_groups\": 0, \"key_groups\": 4, \"retained_copies\": 3}\n\nKey: {\"item\": \"chalk\", \"location\": \"east\"}\nDuplicate key: no\nEmpty key columns: []\n  Row: {\"item\": \"chalk\", \"location\": \"east\", \"quantity\": \"4\"}\n    Counts: before 1; after 0; retained 0; before surplus 1; after surplus 0.\n    Before records: [6]; after records: []\n\nKey: {\"item\": \"charcoal\", \"location\": \"west\"}\nDuplicate key: no\nEmpty key columns: []\n  Row: {\"item\": \"charcoal\", \"location\": \"west\", \"quantity\": \"5\"}\n    Counts: before 0; after 1; retained 0; before surplus 0; after surplus 1.\n    Before records: []; after records: [6]\n\nKey: {\"item\": \"flint\", \"location\": \"north\"}\nDuplicate key: yes\nEmpty key columns: []\n  Row: {\"item\": \"flint\", \"location\": \"north\", \"quantity\": \"2\"}\n    Counts: before 2; after 1; retained 1; before surplus 1; after surplus 0.\n    Before records: [2, 3]; after records: [3]\n  Row: {\"item\": \"flint\", \"location\": \"north\", \"quantity\": \"3\"}\n    Counts: before 1; after 1; retained 1; before surplus 0; after surplus 0.\n    Before records: [4]; after records: [2]\n  Row: {\"item\": \"flint\", \"location\": \"north\", \"quantity\": \"4\"}\n    Counts: before 0; after 1; retained 0; before surplus 0; after surplus 1.\n    Before records: []; after records: [4]\n\nKey: {\"item\": \"ochre\", \"location\": \"south\"}\nDuplicate key: no\nEmpty key columns: []\n  Row: {\"item\": \"ochre\", \"location\": \"south\", \"quantity\": \"1\"}\n    Counts: before 1; after 1; retained 1; before surplus 0; after surplus 0.\n    Before records: [5]; after records: [5]\nRetained copies describe equal row values, not surviving identities. No occurrences paired; no updates inferred.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "line-2/tools/csv-multiplicity/multiplicity.py",
+        "shared/token-read-plan/observed.csv",
+        "shared/token-read-plan/observed.csv",
+        "--key",
+        "token_address"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "stdout": "{\n  \"columns\": [\n    \"block_number\",\n    \"chain_id\",\n    \"display_value\",\n    \"expected_symbol\",\n    \"field\",\n    \"raw_value\",\n    \"token_address\"\n  ],\n  \"format\": \"csv-multiplicity/v1\",\n  \"groups\": [\n    {\n      \"after_count\": 3,\n      \"after_surplus_copies\": 0,\n      \"before_count\": 3,\n      \"before_surplus_copies\": 0,\n      \"duplicate_key\": true,\n      \"empty_key_columns\": [],\n      \"key\": {\n        \"token_address\": \"0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7\"\n      },\n      \"retained_copies\": 3,\n      \"variants\": [\n        {\n          \"after_count\": 1,\n          \"after_records\": [\n            6\n          ],\n          \"after_surplus_copies\": 0,\n          \"before_count\": 1,\n          \"before_records\": [\n            6\n          ],\n          \"before_surplus_copies\": 0,\n          \"retained_copies\": 1,\n          \"values\": {\n            \"block_number\": \"0x18fc1e6\",\n            \"chain_id\": \"1\",\n            \"display_value\": \"18\",\n            \"expected_symbol\": \"IMD\",\n            \"field\": \"decimals\",\n            \"raw_value\": \"18\",\n            \"token_address\": \"0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7\"\n          }\n        },\n        {\n          \"after_count\": 1,\n          \"after_records\": [\n            7\n          ],\n          \"after_surplus_copies\": 0,\n          \"before_count\": 1,\n          \"before_records\": [\n            7\n          ],\n          \"before_surplus_copies\": 0,\n          \"retained_copies\": 1,\n          \"values\": {\n            \"block_number\": \"0x18fc1e6\",\n            \"chain_id\": \"1\",\n            \"display_value\": \"4164418.598629\",\n            \"expected_symbol\": \"IMD\",\n            \"field\": \"totalSupply\",\n            \"raw_value\": \"4164418598629000000000000\",\n            \"token_address\": \"0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7\"\n          }\n        },\n        {\n          \"after_count\": 1,\n          \"after_records\": [\n            5\n          ],\n          \"after_surplus_copies\": 0,\n          \"before_count\": 1,\n          \"before_records\": [\n            5\n          ],\n          \"before_surplus_copies\": 0,\n          \"retained_copies\": 1,\n          \"values\": {\n            \"block_number\": \"0x18fc1e6\",\n            \"chain_id\": \"1\",\n            \"display_value\": \"IMD\",\n            \"expected_symbol\": \"IMD\",\n            \"field\": \"symbol\",\n            \"raw_value\": \"IMD\",\n            \"token_address\": \"0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7\"\n          }\n        }\n      ]\n    },\n    {\n      \"after_count\": 3,\n      \"after_surplus_copies\": 0,\n      \"before_count\": 3,\n      \"before_surplus_copies\": 0,\n      \"duplicate_key\": true,\n      \"empty_key_columns\": [],\n      \"key\": {\n        \"token_address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\"\n      },\n      \"retained_copies\": 3,\n      \"variants\": [\n        {\n          \"after_count\": 1,\n          \"after_records\": [\n            4\n          ],\n          \"after_surplus_copies\": 0,\n          \"before_count\": 1,\n          \"before_records\": [\n            4\n          ],\n          \"before_surplus_copies\": 0,\n          \"retained_copies\": 1,\n          \"values\": {\n            \"block_number\": \"0x18fc1e6\",\n            \"chain_id\": \"1\",\n            \"display_value\": \"1000000000\",\n            \"expected_symbol\": \"ZTO\",\n            \"field\": \"totalSupply\",\n            \"raw_value\": \"1000000000000000000000000000\",\n            \"token_address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\"\n          }\n        },\n        {\n          \"after_count\": 1,\n          \"after_records\": [\n            3\n          ],\n          \"after_surplus_copies\": 0,\n          \"before_count\": 1,\n          \"before_records\": [\n            3\n          ],\n          \"before_surplus_copies\": 0,\n          \"retained_copies\": 1,\n          \"values\": {\n            \"block_number\": \"0x18fc1e6\",\n            \"chain_id\": \"1\",\n            \"display_value\": \"18\",\n            \"expected_symbol\": \"ZTO\",\n            \"field\": \"decimals\",\n            \"raw_value\": \"18\",\n            \"token_address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\"\n          }\n        },\n        {\n          \"after_count\": 1,\n          \"after_records\": [\n            2\n          ],\n          \"after_surplus_copies\": 0,\n          \"before_count\": 1,\n          \"before_records\": [\n            2\n          ],\n          \"before_surplus_copies\": 0,\n          \"retained_copies\": 1,\n          \"values\": {\n            \"block_number\": \"0x18fc1e6\",\n            \"chain_id\": \"1\",\n            \"display_value\": \"ZTO\",\n            \"expected_symbol\": \"ZTO\",\n            \"field\": \"symbol\",\n            \"raw_value\": \"ZTO\",\n            \"token_address\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\"\n          }\n        }\n      ]\n    }\n  ],\n  \"identity_matching\": false,\n  \"keys\": [\n    \"token_address\"\n  ],\n  \"multiset_equal\": true,\n  \"summary\": {\n    \"after_records\": 6,\n    \"after_surplus_copies\": 0,\n    \"before_records\": 6,\n    \"before_surplus_copies\": 0,\n    \"duplicate_key_groups\": 2,\n    \"empty_key_groups\": 0,\n    \"key_groups\": 2,\n    \"retained_copies\": 6\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "line-2/tools/csv-multiplicity/multiplicity.py",
+        "line-2/tools/csv-multiplicity/demo-before.csv",
+        "line-2/tools/csv-multiplicity/demo-after.csv",
+        "--key",
+        "id"
+      ],
+      "expected_exit": 2,
+      "exit": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"demo-before.csv: key columns missing: ['id']\"}\n"
+    }
+  ],
+  "historical_token_note": "Retained ZTO-first/IMD-second observations compared offline; no fresh chain state claimed.",
+  "mistaken_initial_demo_command": "An initial local trial used --key id, absent from the demo headers, and correctly exited 2. The documented composite-key command subsequently exited 1 with expected differences.",
+  "independent_review": {
+    "result": "No correctness defect found",
+    "focused_tests_passed": 15,
+    "independent_counter_oracle_cases": 100,
+    "subprocess_exit_statuses_checked": [
+      0,
+      1,
+      2
+    ],
+    "occurrence_evidence_checked": true,
+    "demo_counts_confirmed": true,
+    "note": "Separate agent reviewed source and README, then ran scratch-only checks. These are local observations, not independent certification."
+  }
+}

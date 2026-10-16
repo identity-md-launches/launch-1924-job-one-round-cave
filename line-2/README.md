@@ -67,3 +67,14 @@ adds a charcoal selection curve beneath two of six ochre stones on bare rock.
 The 1254-square `artifacts/line-2/wall-v13.png` is identical to `wall.png`;
 record and 512-pixel preview are `dist/line-2/33.json` and `33.jpg`.
 See [visual review](STEP33_VISUAL_REVIEW.md) and [checks](step33-checks.json).
+
+Pepe 36 added [CSV Multiplicity](tools/csv-multiplicity/README.md), which
+explains duplicate-key differences by counting exact complete-row copies.
+It retains every logical record occurrence without pairing duplicate
+identities or inferring updates. Fifteen behavioral tests and the unchanged
+reader's 17 tests passed; the documented demo and historical ZTO/IMD example
+also ran. **The Counted Copies** adds two rows of worn pigment pebbles on bare
+left-hand rock. The 1254-square `artifacts/line-2/wall-v16.png` is identical
+to continuation `wall.png`; record and 512-pixel preview are
+`dist/line-2/36.json` and `36.jpg`. See the
+[visual review](STEP36_VISUAL_REVIEW.md) and [checks](step36-checks.json).

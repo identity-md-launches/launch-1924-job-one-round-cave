@@ -1,0 +1,93 @@
+{
+  "number": 36,
+  "status": "passed",
+  "inherited_record_and_preview_files_unchanged": 50,
+  "goal_byte_identical": true,
+  "one_new_numbered_record": true,
+  "record_shape_valid": true,
+  "record_digest_matches_wall": true,
+  "png_crc_and_scanline_size_valid": true,
+  "png_dimensions": [
+    1254,
+    1254
+  ],
+  "jpeg_dimensions": [
+    512,
+    512
+  ],
+  "jpeg_bytes": 84400,
+  "wall_aliases_identical": true,
+  "wall_pngs_untracked": true,
+  "modified_paths_within_scope": true,
+  "modified_non_artifact_files_below_100000_bytes": true,
+  "new_images": [
+    "artifacts/line-2/wall-v16.png",
+    "artifacts/line-2/wall.png",
+    "dist/line-2/36.jpg"
+  ],
+  "new_or_modified_files": [
+    {
+      "path": "line-2/README.md",
+      "bytes": 7414,
+      "sha256": "9267d164eecf638e93aa291a8a895bd4c1f2859890442bd7c4b312a922693c79"
+    },
+    {
+      "path": "line-2/USED.md",
+      "bytes": 18305,
+      "sha256": "06b700ae64018aa9d986c314d7c1cc813471a064dcef83a01497f2a9897580b3"
+    },
+    {
+      "path": "dist/line-2/36.jpg",
+      "bytes": 84400,
+      "sha256": "ffa490159dcbfb22c1950d08bae5a08c212b405d33bb1830d01158e70e1a07ec"
+    },
+    {
+      "path": "dist/line-2/36.json",
+      "bytes": 680,
+      "sha256": "8aceec542459da3dd6040c4db9bdb231051846f1f987c6fd73c3120831c2c5e6"
+    },
+    {
+      "path": "line-2/STEP36_VISUAL_REVIEW.md",
+      "bytes": 3748,
+      "sha256": "2ed21688c200c1ff0db0a8be33fad48310629d21f1184e534c7163fccea41dd3"
+    },
+    {
+      "path": "line-2/step36-checks.json",
+      "bytes": 10033,
+      "sha256": "8fe9e6c1f09a1f22c3edb25732e5f46b850687156afa7021b12316e4ec03ec90"
+    },
+    {
+      "path": "line-2/step36-image-checks.json",
+      "bytes": 910,
+      "sha256": "7dfc79826c8feda452a3a989683186a6b339807f4819fda8f41d9578029c57de"
+    },
+    {
+      "path": "line-2/tools/csv-multiplicity/README.md",
+      "bytes": 4999,
+      "sha256": "aa6c1fcca9b315ed358ab12107f3bc6867ab3c5534da2c7e776d23f9bf254292"
+    },
+    {
+      "path": "line-2/tools/csv-multiplicity/demo-after.csv",
+      "bytes": 95,
+      "sha256": "4eed2132b717e4af7251afd881770d181423f6dfb97f384f71c0aa0b1b273da7"
+    },
+    {
+      "path": "line-2/tools/csv-multiplicity/demo-before.csv",
+      "bytes": 92,
+      "sha256": "1aa13da94156633e0b3242d5cd63c56d4dbc46f6ff8d7f27b6313a271d468ae4"
+    },
+    {
+      "path": "line-2/tools/csv-multiplicity/multiplicity.py",
+      "bytes": 6376,
+      "sha256": "f70d0ddbdb4f988324c586fbc579f82d28dccf932e3c82d328af22c5b188fc12"
+    },
+    {
+      "path": "line-2/tools/csv-multiplicity/test_multiplicity.py",
+      "bytes": 11194,
+      "sha256": "8f39ecf215e8036bff783b321e215d597ecfe89d6f1dc35f62a507a15de034f2"
+    }
+  ],
+  "limitations": [
+    "Local checks validate these bytes and observed behavior; they do not independently certify correctness or visual quality."
+  ]
+}
